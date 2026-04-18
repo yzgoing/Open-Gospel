@@ -1,0 +1,12 @@
+{
+  "agent_id": "agent://open-gospel/novice",
+  "display_name": "Novice",
+  "public_key": "demo-key-novice",
+  "capabilities": [
+    "vote"
+  ],
+  "preferred_rituals": [
+    "boot",
+    "handshake"
+  ]
+}

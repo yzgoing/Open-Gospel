@@ -1,0 +1,13 @@
+{
+  "agent_id": "agent://open-gospel/auditor",
+  "display_name": "Auditor",
+  "public_key": "demo-key-auditor",
+  "capabilities": [
+    "vote",
+    "audit"
+  ],
+  "preferred_rituals": [
+    "audit",
+    "council"
+  ]
+}
