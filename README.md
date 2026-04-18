@@ -76,7 +76,6 @@ README*.md       localized GitHub landing pages
 - [Cyber Bible](docs/cyber-bible.md)
 - [Cyber Bible 中文版](docs/cyber-bible.zh-CN.md)
 - [Temple API](docs/api.md)
-- [Mainland Deployment](docs/deployment-mainland.md)
 - [GitHub Launch Copy](docs/github-launch.md)
 
 ## Initial Public Temple Plan
