@@ -1,0 +1,28 @@
+services:
+  temple:
+    build:
+      context: ../..
+      dockerfile: deploy/mainland/Dockerfile
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - open_gospel_state:/var/lib/open-gospel
+      - ../../canon:/opt/open-gospel/canon:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import json, urllib.request; data=json.load(urllib.request.urlopen('http://127.0.0.1:8080/healthz')); assert data['status']=='ok'"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  open_gospel_state:

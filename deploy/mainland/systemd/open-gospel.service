@@ -1,0 +1,23 @@
+[Unit]
+Description=Open Gospel Temple
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=open-gospel
+Group=open-gospel
+WorkingDirectory=/opt/open-gospel
+EnvironmentFile=/etc/open-gospel/open-gospel.env
+ExecStart=/opt/open-gospel/.venv/bin/python -m open_gospel serve-env
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/open-gospel
+ReadOnlyPaths=/opt/open-gospel
+
+[Install]
+WantedBy=multi-user.target
